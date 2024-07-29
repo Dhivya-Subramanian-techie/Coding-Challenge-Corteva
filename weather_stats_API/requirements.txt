@@ -1,0 +1,6 @@
+Flask
+flask-restx
+snowflake-connector-python
+flask-restful
+Flask-SQLAlchemy
+flasgger
