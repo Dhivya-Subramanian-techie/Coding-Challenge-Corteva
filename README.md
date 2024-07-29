@@ -37,7 +37,8 @@ This project offers a RESTful API to access weather data and stats, built with F
 	cd weather_stats_API
 
 ### Create a Virtual Environment (Recommended): 
-#### Creating a virtual environment ensures that your project's dependencies are managed separately from your system-wide Python installation.
+    -   Creating a virtual environment ensures that your project's dependencies are managed separately from your system-wide Python installation.
+    
     python -m venv venv
     source venv/bin/activate   # On Windows use `venv\Scripts\activate`
 
@@ -83,3 +84,9 @@ This project offers a RESTful API to access weather data and stats, built with F
     -   page (optional): Page number for pagination (default is 1).
     -   per_page (optional): Number of records per page (default is 10).
     -   Purpose: This endpoint retrieves weather statistics, optionally filtered by year (extracted from the date parameter) and station ID. It also supports pagination to manage large datasets effectively.
+
+## Testing and documentation
+### Run Unit tests
+    python -m unittest test_app
+### API documentation   
+Access the API documentation via Swagger UI. Start the app and go to http://127.0.0.1:5000/ in your browser to explore and test the endpoints.
