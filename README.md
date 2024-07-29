@@ -1,6 +1,6 @@
 # Code Challenge - Weather Stats API
 
-This project offers a RESTful API to access weather data and stats, built with Flask and Flask-RESTx, and using Snowflake for data storage. Check out the answers to the code challenge in `answers/detailed_soln.docx`.
+This project offers a RESTful API to access weather data and stats, built with Flask and Flask-RESTx, and using Snowflake for data storage. Check out the answers to the code challenge in `answers/Weather_Analysis.docx`.
 
 ## Features
 
@@ -37,7 +37,7 @@ This project offers a RESTful API to access weather data and stats, built with F
 	cd weather_stats_API
 
 ### Create a Virtual Environment (Recommended): 
-    ### Creating a virtual environment ensures that your project's dependencies are managed separately from your system-wide Python installation.
+#### Creating a virtual environment ensures that your project's dependencies are managed separately from your system-wide Python installation.
     python -m venv venv
     source venv/bin/activate   # On Windows use `venv\Scripts\activate`
 
@@ -52,7 +52,7 @@ This project offers a RESTful API to access weather data and stats, built with F
     SNOWFLAKE_SCHEMA = 'your_snowflake_schema'      #Example: 'WEATHER'
 
 ## Execute SQL files in Snowflake
-    - Extract the sql files from /answers folder and run them in Snowflake
+### Extract the sql files from /answers folder and run them in Snowflake
     /answers
     ├── create_weather_data_table.sql   # [Problem 1] DDL Statements to create staging_weather_data table 
     ├── create_weather_data.sql         # [Problem 2] DDL Statements to data cleaning and ingestion
@@ -61,27 +61,25 @@ This project offers a RESTful API to access weather data and stats, built with F
 ## Run weather_stats_API application
     python weather_stats_API/app.py     # [Problem 4] Main Flask application file containing API endpoints
 ### Endpoints
-    The API provides the following endpoints:
+#### The API provides the following endpoints:
+    -   /api/weather: Retrieve weather data.
+    -   /api/weather/stats: Retrieve weather statistics.
+#### Get Weather Data
+    -   URL: /api/weather/
+    -   Method: GET
+    -   Query Parameters:
+    -   date (optional): Filter by date (YYYY-MM-DD).
+    -   station_id (optional): Filter by weather station ID.
+    -   page (optional): Page number for pagination (default is 1).
+    -   per_page (optional): Number of records per page (default is 10).
+    -   Purpose: This endpoint retrieves weather data, optionally filtered by date and station ID. It supports pagination to handle large datasets efficiently.
 
-    /api/weather: Retrieve weather data.
-    /api/weather/stats: Retrieve weather statistics.
-### Get Weather Data
-    URL: /api/weather/
-    Method: GET
-    Query Parameters:
-    date (optional): Filter by date (YYYY-MM-DD).
-    station_id (optional): Filter by weather station ID.
-    page (optional): Page number for pagination (default is 1).
-    per_page (optional): Number of records per page (default is 10).
-    Purpose:
-    This endpoint retrieves weather data, optionally filtered by date and station ID. It supports pagination to handle large datasets efficiently.
-### Get Weather Statistics
-    URL: /api/weather/stats/
-    Method: GET
-    Query Parameters:
-    date (optional): Filter results by date (YYYY-MM-DD). The year is extracted from this date for filtering.
-    station_id (optional): Filter by weather station ID.
-    page (optional): Page number for pagination (default is 1).
-    per_page (optional): Number of records per page (default is 10).
-    Purpose:
-    This endpoint retrieves weather statistics, optionally filtered by year (extracted from the date parameter) and station ID. It also supports pagination to manage large datasets effectively.
+#### Get Weather Statistics
+    -   URL: /api/weather/stats/
+    -   Method: GET
+    -   Query Parameters:
+    -   date (optional): Filter results by date (YYYY-MM-DD). The year is extracted from this date for filtering.
+    -   station_id (optional): Filter by weather station ID.
+    -   page (optional): Page number for pagination (default is 1).
+    -   per_page (optional): Number of records per page (default is 10).
+    -   Purpose: This endpoint retrieves weather statistics, optionally filtered by year (extracted from the date parameter) and station ID. It also supports pagination to manage large datasets effectively.
