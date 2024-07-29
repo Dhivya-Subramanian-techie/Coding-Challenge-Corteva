@@ -1,6 +1,6 @@
-# Code Challenge Template
+# Code Challenge - Weather Stats API
 
-This project offers a RESTful API to access weather data and stats, built with Flask and Flask-RESTx, and using Snowflake for data storage. Check out the answers to the code challenge in `answers/answers.docx`.
+This project offers a RESTful API to access weather data and stats, built with Flask and Flask-RESTx, and using Snowflake for data storage. Check out the answers to the code challenge in `answers/detailed_soln.docx`.
 
 ## Features
 
@@ -19,6 +19,7 @@ This project offers a RESTful API to access weather data and stats, built with F
 ├── app.py             # Main Flask application file containing API endpoints
 ├── unit_tests.py      # Unit tests for testing the application
 └── requirements.txt   # List of Python dependencies required for the application
+```
 
 ## Prerequisites
 
