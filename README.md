@@ -32,13 +32,13 @@ This project offers a RESTful API to access weather data and stats, built with F
 
 ### Clone repo
 
-	git clone https://github.com/
+	git clone https://github.com/Dhivya-Subramanian-techie/Coding-Challenge-Corteva
 
 	cd weather_stats_API
 
 ### Create a Virtual Environment (Recommended): 
     -   Creating a virtual environment ensures that your project's dependencies are managed separately from your system-wide Python installation.
-    
+
     python -m venv venv
     source venv/bin/activate   # On Windows use `venv\Scripts\activate`
 
